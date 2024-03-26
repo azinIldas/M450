@@ -1,0 +1,7 @@
+C:\Github\Modularbeit450\M450\TestProject\bin\Debug\net8.0\CoverletSourceRootsMapping_TestProject
+C:\Github\Modularbeit450\M450\TestProject\obj\Debug\net8.0\TestProject.csproj.AssemblyReference.cache
+C:\Github\Modularbeit450\M450\TestProject\obj\Debug\net8.0\TestProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github\Modularbeit450\M450\TestProject\obj\Debug\net8.0\TestProject.AssemblyInfoInputs.cache
+C:\Github\Modularbeit450\M450\TestProject\obj\Debug\net8.0\TestProject.AssemblyInfo.cs
+C:\Github\Modularbeit450\M450\TestProject\obj\Debug\net8.0\TestProject.csproj.CoreCompileInputs.cache
+C:\Github\Modularbeit450\M450\TestProject\obj\Debug\net8.0\TestProject.sourcelink.json
