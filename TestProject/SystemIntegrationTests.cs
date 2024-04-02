@@ -71,5 +71,33 @@ namespace TestProject
             // Es wird nicht erwartet, dass LoadCargo aufgerufen wird, da eine Ausnahme geworfen wird
             _mockVehicle.Verify(v => v.LoadCargo(It.IsAny<int>()), Times.Never());
         }
+        [Fact]
+        public void ServiceGibtFalseZurueckWennFahrzeugNichtStartenKann()
+        {
+            // Konfigurieren des Fahrzeug-Mocks, um eine Exception zu werfen, wenn Start aufgerufen wird
+            _mockVehicle.Setup(v => v.Start()).Throws(new Exception("Fahrzeug kann nicht starten"));
+
+            // Versuch, den Auftrag auszuführen
+            bool ergebnis = _meinService.FühreAuftragAus(_mockOrder.Object);
+
+            // Erwarte, dass der Service false zurückgibt, weil das Fahrzeug nicht starten kann
+            Assert.False(ergebnis);
+        }
+
+
+        [Fact]
+        public void ServiceGibtFalseZurueckWennZielortNichtErreichbarIst()
+        {
+            // Diese Methode kann nur hinzugefügt werden, wenn die IsDestinationReachable Methode existiert.
+            // Wenn die Methode nicht existiert, muss diese entfernt oder die Methode im IVehicle Interface definiert werden.
+            _mockVehicle.Setup(v => v.IsDestinationReachable(_mockOrder.Object.EndLocation)).Returns(false);
+
+            // Versuch, den Auftrag auszuführen
+            bool ergebnis = _meinService.FühreAuftragAus(_mockOrder.Object);
+
+            // Erwarte, dass der Service false zurückgibt, weil das Ziel nicht erreichbar ist
+            Assert.False(ergebnis);
+        }
+
     }
 }
